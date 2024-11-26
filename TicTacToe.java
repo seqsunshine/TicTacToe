@@ -91,4 +91,8 @@ public class TicTacToe {
             System.out.println("-------------");
         }
     }
+
+    private static void switchPlayer() {
+        currentPlayer = (currentPlayer == 'X' ? 'O' : 'X');
+    }
 }
