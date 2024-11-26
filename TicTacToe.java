@@ -43,6 +43,34 @@ public class TicTacToe {
         }
     }
 
+    private static boolean isWinner() {
+        // check rows and columns for a win
+        for (int i = 0; i < 3; i++) {
+            if ((board[i][0] == currentPlayer && board[i][1] == currentPlayer && board[i][2] == currentPlayer) ||
+                    (board[0][i] == currentPlayer && board[1][i] == currentPlayer))
+                return true;
+        }
+        //check diagonals for a win
+        for (int i = 0; i < 3; i++) {
+            if ((board[i][0] == currentPlayer && board[i][1] == currentPlayer && board[i][2] == currentPlayer) ||
+            (board[0][i] == currentPlayer && board[1][i] == currentPlayer && board[2][i] == currentPlayer))
+                return true;
+        }
+
+        return false;
+    }
+
+    private static boolean isBoardFull() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == ' '){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     //initialize board with empty spaces
     private static void initializeBoard() {
         for (int i = 0; i < 3; i++) {
